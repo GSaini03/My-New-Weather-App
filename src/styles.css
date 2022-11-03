@@ -1,0 +1,125 @@
+body {
+  background: radial-gradient(
+    circle at 7.5% 24%,
+    rgb(237, 161, 193) 0%,
+    rgb(250, 178, 172) 25.5%,
+    rgb(190, 228, 210) 62.3%,
+    rgb(215, 248, 247) 93.8%
+  );
+
+  height: auto;
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px, auto;
+}
+ul {
+  font-size: 15px;
+  color: rgb(119, 111, 111);
+  padding-bottom: 20px;
+}
+
+li {
+  list-style: none;
+}
+
+h4 {
+  color: rgb(251, 128, 88);
+  font-size: 15px;
+  margin: auto;
+}
+
+h5 {
+  color: rgb(95, 82, 82);
+  font-size: 15px;
+}
+
+footer {
+  color: rgb(2, 46, 36);
+  margin-top: 10px;
+  font-size: 13px;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+li:first-letter {
+  text-transform: capitalize;
+}
+
+.container {
+  padding: 30px 40px;
+  max-width: 70%;
+}
+
+.card {
+  background-color: rgb(253, 244, 240);
+  border-radius: 10px;
+  box-shadow: 7px 7px 28px 7px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  background-color: rgb(253, 244, 240);
+  border-radius: 10px;
+  box-shadow: 7px 7px 28px 7px rgba(0, 0, 0, 0.2);
+}
+
+.overview {
+  border-radius: 40px;
+  margin: auto;
+  width: 480px;
+}
+
+.units {
+  font-size: 15px;
+  position: relative;
+  top: -28px;
+}
+
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.weather-temperature .active .hover {
+  text-decoration: none;
+}
+
+.future-forcast {
+  font-size: 14px;
+}
+
+#temperature {
+  position: relative;
+  margin: auto;
+
+  color: rgb(253, 124, 85);
+  font-size: 45px;
+}
+
+#searchForm {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#city {
+  font-size: 40px;
+  text-align: center;
+  color: rgb(254, 140, 102);
+}
+
+#celsius {
+  text-decoration: none;
+}
+
+#fahrenheit {
+  text-decoration: none;
+}
