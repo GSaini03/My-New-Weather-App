@@ -19,154 +19,164 @@
   </head>
   <body>
     <div class="container">
-      <div class="card">
-        <div class="card-body pb-4">
-          <form class="searchForm" id="searchForm">
-            <input
-              type="text"
-              placeholder=" Search for location "
-              autocomplete="off"
-              autofocus="on"
-              id="city-input"
-              class="form control shadow-sm border border-success p-2 border-opacity-10 rounded-pill"
-            />
-            <input
-              type="submit"
-              value="Search"
-              class="form control shadow-sm border border-success p-2 border-opacity-10 rounded-pill"
-              id="search-button"
-            />
+      <div class="card pb-4">
+        <form class="searchForm" id="searchForm">
+          <input
+            type="text"
+            placeholder=" Search for location "
+            autocomplete="off"
+            autofocus="on"
+            id="city-input"
+            class="form control shadow-sm border border-success p-2 border-opacity-10 rounded-pill"
+          />
+          <input
+            type="submit"
+            value="Search"
+            class="form control shadow-sm border border-success p-2 border-opacity-10 rounded-pill"
+            id="search-button"
+          />
 
-            <button
-              type="button"
-              value="Current location"
-              class="form control shadow-sm border border-success p-2 border-opacity-10 rounded-pill"
-              id="currentLocation-button"
-            >
-              Current Location
-            </button>
-          </form>
+          <button
+            type="button"
+            value="Current location"
+            class="form control shadow-sm border border-success p-2 border-opacity-10 rounded-pill"
+            id="currentLocation-button"
+          >
+            Current Location
+          </button>
+        </form>
 
-          <div class="overview mx-auto">
-            <h1 class="border p-3 mt-5 mb-4 rounded-5 shadow">
-              <div id="city"></div>
-              <ul>
-                <li id="today"></li>
-                <li id="description"></li>
-              </ul>
-              <div class="row">
-                <div class="col-6">
-                  <div class="weather-temperature">
-                    <img
-                      src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                      alt="Partly Cloudy"
-                      id="icon"
-                    />
+        <div class="overview mx-auto">
+          <h1 class="border p-3 mt-5 mb-4 rounded-5 shadow">
+            <div id="city"></div>
+            <ul>
+              <li id="today"></li>
+              <li id="description"></li>
+            </ul>
+            <div class="row">
+              <div class="col-6">
+                <div class="weather-temperature">
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                    alt="Partly Cloudy"
+                    id="icon"
+                  />
 
-                    <span class="temperature" id="temperature">18</span>
-                    <span class="units">
-                      <a href="#" id="celsius" class="active"> °C </a> |
-                      <a href="#" id="fahrenheit"> °F </a>
-                    </span>
-                  </div>
-                </div>
-
-                <div class="col-6">
-                  <ul>
-                    <li>Humidity: <span id="humidity"></span>%</li>
-
-                    <li>Wind speed: <span id="wind"></span> km/h</li>
-                  </ul>
-                </div>
-              </div>
-            </h1>
-          </div>
-
-          <br />
-
-          <h5>Coming 6 Days forcast</h5>
-
-          <div class="future-forcast">
-            <div class="row gx-2 future-forcast" style="text-align: center">
-              <div class="col-2">
-                <div class="card mb-1 h-100">
-                  <div class="card-body">
-                    <p>
-                      Friday
-                      <br />
-                      🌤️
-                      <br />
-                      17°C / 12°C <br />
-                    </p>
-                  </div>
+                  <span class="temperature" id="temperature">18</span>
+                  <span class="units">
+                    <a href="#" id="celsius" class="active"> °C </a> |
+                    <a href="#" id="fahrenheit"> °F </a>
+                  </span>
                 </div>
               </div>
 
-              <div class="col-2">
-                <div class="card mb-1 h-100">
-                  <div class="card-body">
-                    <p>
-                      Saturday
-                      <br />
-                      🌦️
-                      <br />
-                      16°C / 9°C
-                    </p>
-                  </div>
+              <div class="col-6">
+                <ul>
+                  <li>Humidity: <span id="humidity"></span>%</li>
+
+                  <li>Wind speed: <span id="wind"></span> km/h</li>
+                </ul>
+              </div>
+            </div>
+          </h1>
+        </div>
+
+        <br />
+
+        <h4>Coming 6 Days forcast</h4>
+
+        <div class="future-forcast">
+          <div class="row gx-2 future-forcast" style="text-align: center">
+            <div class="col-2">
+              <div class="small-card mb-1 h-100">
+                <div class="card-body">
+                  <h5>Friday</h5>
+                  <h6>Date</h6>
+                  <p>
+                    <br />
+                    🌤️
+                    <br />
+                    17°C / 12°C <br />
+                  </p>
                 </div>
               </div>
+            </div>
 
-              <div class="col-2">
-                <div class="card mb-1 h-100">
-                  <div class="card-body">
-                    <p>
-                      Sunday
-                      <br />
-                      🌥️
-                      <br />
+            <div class="col-2">
+              <div class="card mb-1 h-100">
+                <div class="card-body">
+                  <h5>Saturday</h5>
+                  <h6>Date</h6>
 
-                      17°C / 10°C
-                    </p>
-                  </div>
+                  <p>
+                    <br />
+                    🌦️
+                    <br />
+                    16°C / 9°C
+                  </p>
                 </div>
               </div>
+            </div>
 
-              <div class="col-2">
-                <div class="card mb-1 h-100">
-                  <div class="card-body">
-                    <p>
-                      Monday
-                      <br />
-                      🌦️
-                      <br />
-                      13°C / 8°C
-                    </p>
-                  </div>
+            <div class="col-2">
+              <div class="card mb-1 h-100">
+                <div class="card-body">
+                  <h5>Sunday</h5>
+                  <h6>Date</h6>
+
+                  <p>
+                    <br />
+                    🌥️
+                    <br />
+
+                    17°C / 10°C
+                  </p>
                 </div>
               </div>
+            </div>
 
-              <div class="col-2">
-                <div class="card mb-1 h-100">
-                  <div class="card-body">
-                    <p>
-                      Tuesday <br />🌦️ <br />
-                      14°C / 10°C
-                    </p>
-                  </div>
+            <div class="col-2">
+              <div class="card mb-1 h-100">
+                <div class="card-body">
+                  <h5>Monday</h5>
+                  <h6>Date</h6>
+
+                  <p>
+                    <br />
+                    🌦️
+                    <br />
+                    13°C / 8°C
+                  </p>
                 </div>
               </div>
+            </div>
 
-              <div class="col-2">
-                <div class="card mb-1 h-100">
-                  <div class="card-body">
-                    <p>
-                      Wednesday
-                      <br />
-                      🌦️
-                      <br />
-                      14°C / 9°C
-                    </p>
-                  </div>
+            <div class="col-2">
+              <div class="card mb-1 h-100">
+                <div class="card-body">
+                  <h5>Tuesday</h5>
+                  <h6>Date</h6>
+
+                  <p>
+                    <br />🌦️ <br />
+                    14°C / 10°C
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-2">
+              <div class="card mb-1 h-100">
+                <div class="card-body">
+                  <h5>Wednesday</h5>
+                  <h6>date</h6>
+
+                  <p>
+                    <br />
+                    🌦️
+                    <br />
+                    14°C / 9°C
+                  </p>
                 </div>
               </div>
             </div>

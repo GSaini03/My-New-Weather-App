@@ -64,6 +64,7 @@ li:first-letter {
   background-color: rgb(253, 244, 240);
   border-radius: 10px;
   box-shadow: 7px 7px 28px 7px rgba(0, 0, 0, 0.2);
+  padding: 20px;
 }
 
 .card-body {
@@ -75,7 +76,7 @@ li:first-letter {
 .overview {
   border-radius: 40px;
   margin: auto;
-  width: 480px;
+  width: 500px;
 }
 
 .units {

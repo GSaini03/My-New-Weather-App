@@ -39,6 +39,9 @@ function formatDate(date) {
   let day = week[dayIndex];
   let month = calendar[monthIndex];
   let todayDate = date.getDate();
+  if (todayDate < 10) {
+    todayDate = `0${todayDate}`;
+  }
 
   return `${day} ${month} ${todayDate}, ${hours}:${min}`;
 }
