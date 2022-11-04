@@ -17,7 +17,7 @@ body {
 
 h1 {
   text-align: center;
-  margin: 20px, auto;
+  margin: 10px, auto;
 }
 ul {
   font-size: 15px;
@@ -37,6 +37,29 @@ h4 {
 h5 {
   color: rgb(95, 82, 82);
   font-size: 15px;
+}
+
+h6 {
+  color: rgb(118, 110, 110);
+  font-size: 14px;
+  font-weight: 100;
+}
+
+p .future-dates-description {
+  color: rgb(95, 82, 82);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+p .temp-max {
+  color: rgb(109, 101, 101);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+p .temp-min {
+  color: rgb(140, 136, 136);
+  font-size: 14px;
 }
 
 footer {
