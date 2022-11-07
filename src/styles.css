@@ -79,7 +79,8 @@ li:first-letter {
 
 .container {
   padding: 20px 30px;
-  max-width: 75%;
+  max-width: 70%;
+  margin-top: -20px;
 }
 
 .card {
