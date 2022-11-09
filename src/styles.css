@@ -30,19 +30,19 @@ li {
 }
 
 h4 {
-  color: rgb(251, 128, 88);
+  color: rgba(251, 129, 88, 0.905);
   font-size: 16px;
 }
 
 h5 {
-  color: rgb(95, 82, 82);
-  font-size: 15px;
+  font-size: 16px;
+  opacity: 0.8;
 }
 
 h6 {
-  color: rgb(118, 110, 110);
-  font-size: 14px;
-  font-weight: 100;
+  font-size: 15px;
+  opacity: 0.6;
+  font-weight: 400;
 }
 
 p .future-dates-description {
@@ -58,14 +58,14 @@ p .temp-max {
 }
 
 p .temp-min {
-  color: rgb(140, 136, 136);
   font-size: 14px;
+  opacity: 0.7;
 }
 
 footer {
   color: rgb(2, 46, 36);
   margin-top: 10px;
-  font-size: 13px;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -84,24 +84,26 @@ li:first-letter {
 }
 
 .card {
-  background-color: rgb(253, 244, 240);
+  background-color: rgba(253, 244, 240, 0.863);
   border-radius: 10px;
   box-shadow: 7px 7px 28px 7px rgba(0, 0, 0, 0.2);
   padding: 20px;
 }
 
 .small-card {
-  background-color: rgb(253, 244, 240);
+  background-color: rgba(253, 244, 240, 0.766);
   border-radius: 10px;
   box-shadow: 7px 7px 28px 7px rgba(0, 0, 0, 0.2);
   word-wrap: break-word;
   background-clip: border-box;
+  transition: all 250ms ease-in-out;
 }
 
 // need to check this one⬇️
 .small-card .hover {
   background-color: rgba(204, 195, 186, 0.3);
   border: 1px solid rgba(203, 186, 204, 0.3);
+  cursor: pointer;
 }
 
 .overview {
@@ -127,31 +129,12 @@ li:first-letter {
 
 .future-forcast {
   color: #000;
-  font-size: 14px;
   margin: 10px;
   text-align: center;
 }
 
-.weather-forecast-day {
-  font-size: 16px;
-  opacity: 0.7;
-}
-
 .future-dates-description {
-  opacity: 0.7;
-}
-
-.weather-forecast-date {
-  font-size: 16px;
-  opacity: 0.7;
-}
-
-.temp-max {
-  font-size: 14px;
-}
-
-.temp-min {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 #temperature {
