@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://kit.fontawesome.com/5b0b12f9fb.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Weather App</title>
 
     <link
@@ -22,7 +26,7 @@
       <div class="card pb-4">
         <div class="row">
           <div class="col">
-            <form class="" id="searchForm">
+            <form class="search-bar" id="searchForm">
               <input
                 type="text"
                 placeholder=" Search for location "
@@ -45,7 +49,7 @@
                 class="form control shadow-sm border border-success p-2 border-opacity-10 rounded-pill"
                 id="currentLocation-button"
               >
-                Current Location
+                <i class="fa-solid fa-location-dot fa-xl"> </i>
               </button>
             </form>
           </div>
@@ -88,155 +92,9 @@
 
         <br />
 
-        <h4>Coming 6 Days forcast</h4>
+        <h4><i class="fa-solid fa-calendar-days"></i> Coming 6 Days forcast</h4>
 
-        <div class="future-forcast">
-          <div class="row gx-3 future-forcast" style="text-align: center">
-            <div class="col-2">
-              <div class="small-card mb-1 h-100">
-                <div class="card-body">
-                  <div class="future-dates">
-                    <h5>Monday</h5>
-                    <h6>Nov 07</h6>
-                  </div>
-
-                  <img
-                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
-                    alt="light rain"
-                    class="weather-icon"
-                  />
-
-                  <p class="future-dates-description">Light rain</p>
-
-                  <p>
-                    <span class="temp-max">17°C</span> /
-                    <span class="temp-min">12°C </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-2">
-              <div class="small-card mb-1 h-100">
-                <div class="card-body">
-                  <div class="future-dates">
-                    <h5>Tuesdayday</h5>
-                    <h6>Nov 08</h6>
-                  </div>
-
-                  <img
-                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
-                    alt="clear-sky-day"
-                    class="weather-icon"
-                  />
-
-                  <p class="future-dates-description">Sky is clear</p>
-
-                  <p>
-                    <span class="temp-max">17°C</span> /
-                    <span class="temp-min">12°C </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-2">
-              <div class="small-card mb-1 h-100">
-                <div class="card-body">
-                  <div class="future-dates">
-                    <h5>Wednesday</h5>
-                    <h6>Nov 09</h6>
-                  </div>
-
-                  <img
-                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
-                    alt="few-clouds-day"
-                    class="weather-icon"
-                  />
-
-                  <p class="future-dates-description">Few clouds</p>
-
-                  <p>
-                    <span class="temp-max">17°C</span> /
-                    <span class="temp-min">12°C </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-2">
-              <div class="small-card mb-1 h-100">
-                <div class="card-body">
-                  <div class="future-dates">
-                    <h5>Thursday</h5>
-                    <h6>Nov 10</h6>
-                  </div>
-
-                  <img
-                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/thunderstorm-day.png"
-                    alt="thunderstorm-day"
-                    class="weather-icon"
-                  />
-
-                  <p class="future-dates-description">Thunderstorm</p>
-
-                  <p>
-                    <span class="temp-max">17°C</span> /
-                    <span class="temp-min">12°C </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-2">
-              <div class="small-card mb-1 h-100">
-                <div class="card-body">
-                  <div class="future-dates">
-                    <h5>Friday</h5>
-                    <h6>Nov 11</h6>
-                  </div>
-
-                  <img
-                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/shower-rain-day.png"
-                    alt="shower-rain-day"
-                    class="weather-icon"
-                  />
-
-                  <p class="future-dates-description">Shower rain</p>
-
-                  <p>
-                    <span class="temp-max">17°C</span> /
-                    <span class="temp-min">12°C </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-2">
-              <div class="small-card mb-1 h-100">
-                <div class="card-body">
-                  <div class="future-dates">
-                    <h5>Saturday</h5>
-                    <h6>Nov 12</h6>
-                  </div>
-
-                  <img
-                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png"
-                    alt="scattered-clouds-day"
-                    class="weather-icon"
-                  />
-
-                  <p class="future-dates-description">Scattered clouds</p>
-
-                  <p>
-                    <span class="temp-max">17°C</span> /
-                    <span class="temp-min">12°C </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="future-forcast" id="forecast"></div>
       </div>
       <footer id="madeBy">
         <a href="https://github.com/GSaini03/Weather-App" target="_blank">

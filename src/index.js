@@ -1,4 +1,5 @@
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -9,8 +10,7 @@ function formatDate(date) {
     min = `0${min}`;
   }
 
-  let dayIndex = date.getDay();
-  let week = [
+  let days = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -20,8 +20,9 @@ function formatDate(date) {
     "Saturday",
   ];
 
-  let monthIndex = date.getMonth();
-  let calendar = [
+  let day = days[date.getDay()];
+
+  let months = [
     "January",
     "February",
     "March",
@@ -36,19 +37,113 @@ function formatDate(date) {
     "December",
   ];
 
-  let day = week[dayIndex];
-  let month = calendar[monthIndex];
-  let todayDate = date.getDate();
-  if (todayDate < 10) {
-    todayDate = `0${todayDate}`;
+  let currentMonth = months[date.getMonth()];
+
+  let currentDate = date.getDate();
+  if (currentDate < 10) {
+    currentDate = `0${currentDate}`;
   }
 
-  return `${day} ${month} ${todayDate}, ${hours}:${min}`;
+  return `${day} ${currentMonth} ${currentDate}, ${hours}:${min}`;
 }
 
 let currentTime = new Date();
 let dayData = document.querySelector("#today");
 dayData.innerHTML = formatDate(currentTime);
+
+// Get future forecast
+
+function formatWeekDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let currentDate = date.getDate();
+
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  let currentMonth = months[date.getMonth()];
+  if (currentDate < 10) {
+    currentDate = `0${currentDate}`;
+  }
+  return `${currentMonth} ${currentDate}`;
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row gx-3 future-forcast" style="text-align: center">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      // forecastHTML + = ` add the whole HTML from below `
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+              <div class="small-card mb-1 h-100">
+                <div class="card-body">
+                  <div class="future-dates">
+                    <h5>${formatWeekDay(forecastDay.time)}</h5>
+                    <h6>${formatDay(forecastDay.time)}</h6>
+                  </div>
+
+                  <img
+                    src=${forecastDay.condition.icon_url}
+                    alt=""
+                    width=""
+                    class="weather-icon"
+                  />
+
+                  <p class="future-dates-description">${
+                    forecastDay.condition.description
+                  }</p>
+
+                  <p>
+                    <span class="temp-max"> ${Math.round(
+                      forecastDay.temperature.maximum
+                    )}° </span> /
+                    <span class="temp-min"> ${Math.round(
+                      forecastDay.temperature.minimum
+                    )}° </span>
+                  </p>
+                </div>
+              </div>
+            </div>`;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+
+  let apiKey = "3a56f1f74a86f746bo9c87aa352t8f0a";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 
 // Search City & Temperature Input
 
@@ -81,6 +176,8 @@ function displayTemperature(response) {
   // document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   // document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   // document.querySelector("#temperature").innerHTML =response.data.weather[0].description;
+
+  getForecast(response.data.coordinates);
 }
 
 function search(event) {
@@ -154,23 +251,3 @@ let currentLocationButton = document.querySelector("#currentLocation-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Amsterdam");
-
-// Bonus challenge3 - wk4
-
-//function convertToFahrenheit(event) {
-//event.preventDefault();
-//let temp = document.querySelector("#temperature");
-//temp.innerHTML = "64";
-// }
-
-//function convertToCelsius(event) {
-//event.preventDefault();
-//let temp = document.querySelector("#temperature");
-//temp.innerHTML = "18";
-// }
-
-// let fahrenLink = document.querySelector("#fahrenheit");
-// fahrenLink.addEventListener("click", convertToFahrenheit);
-
-// let CelLink = document.querySelector("#celsius");
-// CelLink.addEventListener("click", convertToCelsius);
